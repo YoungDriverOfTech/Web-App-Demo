@@ -21,5 +21,14 @@
 6. 将项目的out目录赋值到刚才创建的classes下面
 7. 启动tomcat
 
-## webapp标准目录结构
+### webapp标准目录结构
 ![webapp](./images/webapp.png)
+
+## maven优化webapp的部署
+1. 在项目根目录下面创建配置文件pom.xml
+2. 右键点击pom.xml，将项目标记为一个maven项目
+3. 写pom文件
+4. IDEA右边侧栏Maven，reload项目
+5. 打war包，package指令
+6. 把target文件夹中生成的war包赋值到Tomcat的app下面
+7. 启动tomcat
