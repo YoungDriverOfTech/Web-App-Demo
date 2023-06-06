@@ -11,3 +11,15 @@
 2. Idea 里面找到project structure的Library，把servlet的jar加入
 3. 找到tomcat安装目录把例子的web.xml拷贝出来修改一下。 （/Library/tomcat/webapps/examples/WEB-INF）
 4. 自己的servlet类实现Servlet接口，追加自己的逻辑代码即可
+
+### 用Tomcat来部署webApp
+1. 进入tomcat目录下的webapps文件夹
+2. 在webapps目录下创建文件夹hotel，这个文件夹是我们webapp的根目录，文件夹的名称就是我们webapp请求路径的根路径
+3. webappRoot下创建WEB-INF文件夹
+4. WEB-INF下创建classes文件夹
+5. 将项目的web.xml赋值到WEB-INF下面
+6. 将项目的out目录赋值到刚才创建的classes下面
+7. 启动tomcat
+
+## webapp标准目录结构
+![webapp](./images/webapp.png)
