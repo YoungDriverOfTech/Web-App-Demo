@@ -24,6 +24,26 @@
 ### webapp标准目录结构
 ![webapp](./images/webapp.png)
 
+### 创建过程
+```
+第一步：IDEA 创建空工程
+第二步：IDEA 创建模块，build system 选择 Maven，修改 GroupId
+第三步：在 main 目录下创建 webapp 目录，webapp 目录下创建 WEB-INF
+第四步：在 WEB-INF 目录下创建 web.xml
+第五步：填写 web.xml，建议从其他地方复制，例如从 TomcatRoot -> webapps -> examples 项目中复制，删除多余的内容，仅保留一个 servlet 和 servlet-mapping 作为后续参考
+第六步：编辑 pom.xml，修改打包方式为 war
+第七步：编辑 pom.xml，引入 javax.servlet-api 依赖，重新加载 Maven
+第八步：在代码包路径下创建 Servlet 类，例如 QueryRoomServlet，实现 Servlet 接口
+第九步：编辑 web.xml，配置 servlet 和 servlet-mapping
+第十步：编辑 Configuration，增加一个 SmartTomcat 的 Configuration 
+第十一步：配置 Configuration  
+    Deployment directory : webapp 路径  
+    Use classpath of module : hotel  
+    Context path: /hotel  
+第十二步：在 IDEA 中启动 Tomcat
+第十三步：打开浏览器，在地址栏输入 http://localhost:8080/hotel/queryRoom
+```
+
 ## maven优化webapp的部署
 1. 在项目根目录下面创建配置文件pom.xml
 2. 右键点击pom.xml，将项目标记为一个maven项目
@@ -32,3 +52,14 @@
 5. 打war包，package指令
 6. 把target文件夹中生成的war包赋值到Tomcat的app下面
 7. 启动tomcat
+
+# Servlet
+## 概念相关
+### 生命周期
+Servlet对象的生命周期：一个 Servlet 对象从出生（创建）到死亡（销毁）的整个过程
+
+## 生命周期方法
+### Servlet 对象的 service 方法什么时候被调用
+service 方法在用户访问 Servlet 对象的请求路径时被调用。
+请求一次就会调用一次。
+
