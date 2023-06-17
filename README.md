@@ -118,3 +118,10 @@ service 方法在用户访问 Servlet 对象的请求路径时被调用。
 **destroy方法被调用的时候，servlet对象是否已经被销毁？**
 destroy方法被调用时，servlet对象还没有被销毁，因为destroy方法是实例方法，必须有对象存在才能被调用
 
+### Servlet对象生命周期总结
+![servlet](./images/servlet.png)
+- Servlet 对象默认在第一次请求到来时创建，如果配置了 load-on-startup 是在服务启动时创建。
+- init 方法在对象创建完成后被调用。
+- Servlet 是单实例的，一个 Servlet 类只创建一个对象，init 方法只调用一次。
+- 每次请求都会调用 service 方法。
+- 接收到服务关闭指令，在Servlet对象销毁前会调用 destroy 方法，destroy 方法只执行一次。
