@@ -20,6 +20,10 @@ public class PostServlet implements Servlet {
     @Override
     public void service(ServletRequest req, ServletResponse res) {
         System.out.println("post servlet is called");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        System.out.println("username = " + username);
+        System.out.println("password = " + password);
     }
 
     @Override
