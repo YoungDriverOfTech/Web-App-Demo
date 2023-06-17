@@ -30,6 +30,8 @@ public class MyFirstServlet implements Servlet {
         writer.print("</h2>");
         writer.print("</body>");
         writer.print("</html>");
+
+        System.out.println(this);
     }
 
     @Override
