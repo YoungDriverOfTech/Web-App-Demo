@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class MyFirstServlet implements Servlet {
+
+    public MyFirstServlet() {
+        System.out.println("servlet is created");
+    }
+
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
 

@@ -17,6 +17,7 @@
     <servlet>
         <servlet-name>myFirstServlet</servlet-name>
         <servlet-class>com.app.web.MyFirstServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
 
