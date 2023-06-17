@@ -4,6 +4,7 @@ import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import java.io.IOException;
 
 public class GetServlet implements Servlet {
 
@@ -18,12 +19,17 @@ public class GetServlet implements Servlet {
     }
 
     @Override
-    public void service(ServletRequest req, ServletResponse res) {
+    public void service(ServletRequest req, ServletResponse res) throws IOException {
+
+        // request
         System.out.println("get servlet is called");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         System.out.println("username = " + username);
         System.out.println("password = " + password);
+
+        // response
+        res.getWriter().write("get servlet success");
     }
 
     @Override
