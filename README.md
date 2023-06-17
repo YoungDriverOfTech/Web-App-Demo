@@ -125,3 +125,14 @@ destroy方法被调用时，servlet对象还没有被销毁，因为destroy方�
 - Servlet 是单实例的，一个 Servlet 类只创建一个对象，init 方法只调用一次。
 - 每次请求都会调用 service 方法。
 - 接收到服务关闭指令，在Servlet对象销毁前会调用 destroy 方法，destroy 方法只执行一次。
+
+### Servlet对象由谁来维护 - web容器
+**结论：**
+- Servlet对象是由web服务器维护的，比如说tomcat
+
+**什么是web容器：**
+- Web 容器（ Web Container），用于存放 Servlet 对象，管理 Servlet 对象的整个生命周期。
+- Web 容器负责：
+  - 在合适的时机创建 Servlet 对象，并执行 Servlet 对象的 init 方法初始化对象。
+  - 调用 Servlet 对象的 service 方法响应用户请求
+  - 在服务关闭前销毁对象，并在销毁前调用对象的 destroy 方法。
