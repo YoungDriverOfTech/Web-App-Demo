@@ -136,3 +136,4 @@ destroy方法被调用时，servlet对象还没有被销毁，因为destroy方�
   - 在合适的时机创建 Servlet 对象，并执行 Servlet 对象的 init 方法初始化对象。
   - 调用 Servlet 对象的 service 方法响应用户请求
   - 在服务关闭前销毁对象，并在销毁前调用对象的 destroy 方法。
+

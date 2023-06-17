@@ -19,13 +19,29 @@
         <servlet-class>com.app.web.MyFirstServlet</servlet-class>
 <!--        <load-on-startup>1</load-on-startup>-->
     </servlet>
-
-
     <servlet-mapping>
         <servlet-name>myFirstServlet</servlet-name>
         <url-pattern>/first</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>getServlet</servlet-name>
+        <servlet-class>com.app.web.GetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getServlet</servlet-name>
+        <url-pattern>/getServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>postServlet</servlet-name>
+        <servlet-class>com.app.web.PostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>postServlet</servlet-name>
+        <url-pattern>/postServlet</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
