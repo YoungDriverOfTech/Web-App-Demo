@@ -52,6 +52,15 @@
         <url-pattern>/creatCookieServlet</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>myFirstFilter</filter-name>
+        <filter-class>com.app.web.filter.MyFirstFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>myFirstFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.xhtml</welcome-file>
