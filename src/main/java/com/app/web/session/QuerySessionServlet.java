@@ -19,5 +19,15 @@ public class QuerySessionServlet extends HttpServlet {
             Object obj = session.getAttribute("count");
             System.out.println(obj == null ? "0" : obj);
         }
+
+        // 获取session
+        HttpSession session1 = req.getSession(); // 获取当前 Session，Session 不存在则创建。
+        HttpSession session2 = req.getSession(true); // 获取当前 Session，若不存在，根据参数决定
+
+        // 设置属性
+        session1.setAttribute("wahaha", "wahah");
+
+        // 获取属性
+        session1.getAttribute("wahaha");
     }
 }
