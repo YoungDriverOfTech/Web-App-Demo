@@ -137,3 +137,65 @@ destroy方法被调用时，servlet对象还没有被销毁，因为destroy方�
   - 调用 Servlet 对象的 service 方法响应用户请求
   - 在服务关闭前销毁对象，并在销毁前调用对象的 destroy 方法。
 
+
+# HttpServlet介绍
+## 概述
+- HttpServlet 是 Servlet 规范的一部分，继承 GenericServlet，专门为 HTTP 协议准备，比 GenericServlet 更加适合 HTTP 协议下的开发。
+- HttpServletRequest 继承 ServletRequest，是 HTTP 协议专用的请求对象，封装 HTTP 请求的全部内容，面向 HttpServletRequest 接口编程就能够获得 HTTP 请求中的全部信息。
+- HttpServletResponse  继承 ServletResponse，是 HTTP 协议专用的响应对象。
+
+![http-servlet](./images/http_servlet.png)
+
+## 模版方法设计模式
+- 模板方法模式，定义一个操作中算法的骨架，将步骤的具体实现延迟到子类中。使得子类可以在不改变一个算法的结构的情况下，就可以重定义该算法的某些特定步骤。
+- 为什么用模板方法设计模式：因为生活中很多事物可以抽取共性，这些共性可以固化为骨架，个性的东西交给具体实现。
+- 模板方法的优势：既统一了算法，也提供了很大的灵活性。父类模板方法确保算法结构不变，子类提供部分步骤的实现。
+
+```java
+public abstract class People {
+    
+    public void oneDay() {
+        wakeup();
+        washFace();
+        goToSchool();
+    }
+    
+    public void wakeup() {
+        // empty
+    }
+    
+    public void washFace() {
+        System.out.println("Wash face and brush tooth");
+    }
+    
+    public void goToSchool() {
+        // empty
+    }
+}
+
+public class Student extends People{
+
+  @Override
+  public void wakeup() {
+    System.out.println("Parents wake kid up");
+  }
+
+  @Override
+  public void goToSchool() {
+    System.out.println("Taking school bug go to school");
+  }
+}
+
+public class Teacher extends People{
+
+  @Override
+  public void wakeup() {
+    System.out.println("Waken up by alarm");
+  }
+
+  @Override
+  public void goToSchool() {
+    System.out.println("Taking subway go to school");
+  }
+}
+```
